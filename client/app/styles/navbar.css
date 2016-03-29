@@ -1,0 +1,44 @@
+@import "./config.css";
+
+.root {
+  min-width: 100%;
+  height: 15%;
+  padding: 10px;
+  display: table;
+  background-color: #586994;
+}
+
+img {
+  float: left;
+}
+
+.ul {
+  width: inherit;
+  padding-left: 0;
+}
+
+.navItem {
+  color: #fff;
+  padding: 3px 3px;
+  margin: 3px 5px;
+  display: inline-block;
+  font-size: 18px;
+  text-decoration: none;
+  float: right;
+}
+
+.navItem:hover {
+  color: #b8d8d8;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.signout {
+  float: right;
+  resize: inherit;
+  color: white;
+  padding: 3px 3px;
+  margin: 3px 5px;
+  display: inline-block;
+  text-decoration: none;
+}
