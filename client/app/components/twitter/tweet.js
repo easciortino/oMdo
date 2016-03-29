@@ -1,5 +1,6 @@
 var React = require('react');
 var BarChart = require('react-chartjs').Bar;
+var Tile = require('../tile');
 var format = require('../utilities/formatTwitterData');
 var styleable = require('react-styleable').default;
 var css = require('../../styles/twitterCharts.css');
@@ -8,12 +9,12 @@ function Tweet (props) {
   if(props.tones.length) {
     return (
     <div className={props.css.chartContainer}>
-      <h2>What Are Your Tweets Really Saying?</h2>
-      <div className={props.css.chart}>
+      <Tile className={props.css.chart}>
+        <h2>What Are Your Tweets Really Saying?</h2>
 
           <BarChart data={format(props.tones)} options={props.chartOptions} width='400' height='290' />
-      </div>
-      <div className={props.css.breakdown}>
+      </Tile>
+      <Tile>
       <h3 onClick={props.onEmotionDisplay}>Emotional Tone</h3>
           {
             props.emotionDisplay ?
@@ -69,8 +70,8 @@ function Tweet (props) {
           null
           }
 
-      </div>
-      <div className={props.css.breakdown}>
+      </Tile>
+      <Tile>
         <h3 onClick={props.onLanguageDisplay}>Language Tone</h3>
           {
             props.languageDisplay ?
@@ -113,8 +114,8 @@ function Tweet (props) {
           :
           null
           }
-      </div>
-      <div className={props.css.breakdown}>
+      </Tile>
+      <Tile>
         <h3 onClick={props.onSocialDisplay}>Social Tone</h3>
         {
             props.socialDisplay ?
@@ -184,13 +185,13 @@ function Tweet (props) {
           :
           null
           }
-      </div>
+      </Tile>
 
     </div>
     )
   } else {
     return (
-      <div>No tweets yet</div>
+      <Tile>No tweets yet</Tile>
     )
   }
 }
