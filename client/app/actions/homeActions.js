@@ -12,6 +12,12 @@ module.exports = {
   notAuthorized: function() {
     return {type: actions.NOT_AUTHORIZED};
   },
+  quoteFetched: function() {
+    return {type: actions.QUOTE_FETCHED};
+  },
+  quoteNotFetched: function(response){
+    return {type: actions.QUOTE_NOT_FETCHED, data: response};
+  },
   checkAuth: function() {
     return function(dispatch) {
       dispatch(module.exports.authRequest());
@@ -25,5 +31,16 @@ module.exports = {
         browserHistory.push('/signin');
       });
     };
+  },
+  fetchQuote: function() {
+    return function(dispatch) {
+      axios.get('/quote/')
+      .then(function(response) {
+        dispatch(module.exports.quoteFetched(response));
+      })
+      .catch(function(error) {
+        dispatch(module.exports.quoteNotFetched());
+      })
+    }
   }
 }
