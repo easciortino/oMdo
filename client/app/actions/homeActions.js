@@ -12,11 +12,8 @@ module.exports = {
   notAuthorized: function() {
     return {type: actions.NOT_AUTHORIZED};
   },
-  quoteFetched: function() {
-    return {type: actions.QUOTE_FETCHED};
-  },
-  quoteNotFetched: function(response){
-    return {type: actions.QUOTE_NOT_FETCHED, data: response};
+  quoteFetched: function(response) {
+    return {type: actions.QUOTE_FETCHED, quote: response};
   },
   checkAuth: function() {
     return function(dispatch) {
@@ -39,7 +36,7 @@ module.exports = {
         dispatch(module.exports.quoteFetched(response));
       })
       .catch(function(error) {
-        dispatch(module.exports.quoteNotFetched());
+        console.error('Couldn\'t fetch quote', error);
       })
     }
   }

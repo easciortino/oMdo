@@ -9,6 +9,25 @@
   margin: 1% 17.5%;
 }
 
+button {
+  box-shadow: 5px 4px 5px #424B54;
+  margin-bottom: 30px;
+  font-size: 20px;
+  padding: 10px 10px;
+  border: visible;
+  border-style: solid;
+  border-color: white;
+  border-radius: 15px;
+  background-color: white;
+}
+
+button:hover {
+  cursor: pointer;
+  color: #283D3B;
+  background-color: #F5D547;
+  border-color: #283D3B;
+}
+
 input[type=range] {
   width: 85%;
   height: 5px;
