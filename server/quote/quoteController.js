@@ -13,10 +13,7 @@ var defaultRes = {
 module.exports = {
   getQuote: function(req, res, next) {
     fs.stat(__dirname + '/quote.json', function(err, stats) {
-      if (err) {
-        res.send(defaultRes);
-        next();
-      }
+      if (err) return res.send(defaultRes);
       fs.readFile(__dirname + '/quote.json', 'utf8', function(err, data) {
         if (err || !data.length) res.send(defaultRes);
         res.json(JSON.parse(data));
