@@ -5,7 +5,6 @@ var styleable = require('react-styleable').default;
 var css = require('../../styles/tile.css');
 
 function DiaryEntry (props) {
-  console.log(props)
     if(props.data.length === 0) {
       return (<div><h2>You need to submit a survey</h2></div>)
     } else {

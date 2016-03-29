@@ -18,7 +18,6 @@ module.exports = {
   TOGGLE_MODAL: 'TOGGLE_MODAL',
 
   // home actions
-  QUOTE_NOT_FETCHED: 'QUOTE_NOT_FETCHED',
   QUOTE_FETCHED: 'QUOTE_FETCHED',
 
   // Survey actions
