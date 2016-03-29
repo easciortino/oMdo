@@ -5,7 +5,6 @@ var styleable = require('react-styleable').default;
 var css = require('../../styles/twitterCharts.css');
 
 function Tweet (props) {
-  console.log('the props of a tweet ', props);
   if(props.tones.length) {
     return (
     <div className={props.css.chartContainer}>
@@ -69,13 +68,13 @@ function Tweet (props) {
           :
           null
           }
-          
+
       </div>
       <div className={props.css.breakdown}>
         <h3 onClick={props.onLanguageDisplay}>Language Tone</h3>
           {
             props.languageDisplay ?
-            
+
             <ul>
               <li>Language tone describes how your writing style is perceived.</li>
               <li>
