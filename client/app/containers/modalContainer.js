@@ -32,7 +32,8 @@ var QuotePopUp = React.createClass({
 
           <h2>Hello</h2>
           <button onClick={this.props.actions.toggleModal}>close</button>
-          <pre>{JSON.stringify(this.props.quote.content)}</pre>
+          <pre>{JSON.stringify(this.props.quote.quote)}</pre>
+          <pre>{JSON.stringify(this.props.quote.author)}</pre>
         </Modal>
       </div>
     );

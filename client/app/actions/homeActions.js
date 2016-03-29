@@ -12,8 +12,8 @@ module.exports = {
   notAuthorized: function() {
     return {type: actions.NOT_AUTHORIZED};
   },
-  quoteFetched: function(response) {
-    return {type: actions.QUOTE_FETCHED, quote: response};
+  quoteFetched: function(contents) {
+    return {type: actions.QUOTE_FETCHED, quote: contents};
   },
   checkAuth: function() {
     return function(dispatch) {
@@ -33,7 +33,7 @@ module.exports = {
     return function(dispatch) {
       axios.get('/quote/')
       .then(function(response) {
-        dispatch(module.exports.quoteFetched(response));
+        dispatch(module.exports.quoteFetched(response.data.contents));
       })
       .catch(function(error) {
         console.error('Couldn\'t fetch quote', error);
