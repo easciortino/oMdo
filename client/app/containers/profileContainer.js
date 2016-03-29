@@ -26,7 +26,9 @@ var ProfileContainer = React.createClass({
         <Container>
           <Visualization text='Get An Overview'/>
           <Diary text='Check Out All Your Data' surveys={this.props.surveys} />
-          <Journal entries={this.props.surveys} />
+          <Journal 
+            entries={this.props.surveys}
+          />
         </Container>
       </div>
     )
