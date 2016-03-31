@@ -64,6 +64,8 @@ var ProfileContainer = React.createClass({
       <div><Diary text='Reflect on Your Last 7 Days' surveys={this.props.surveys} /></div>
       : 
       <div><Journal 
+            hideEntry={this.hideEntry}
+            onRevealDiary={this.onRevealDiary}
             entries={this.props.surveys}
             text='Reflect on Your Entries'
           /></div>
